@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Shelves</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Edit Shelves</h1>
+    <form method="post" action="/put/<%=shelves.shelf_id%>">
+        <label for="category">category:</label>
+        <input type="text" id="category" name="category" value="<%=shelves.category%>">
+        <br>
+        <label for="total_books">total_books</label>
+        <input type="text" id="total_books" name="total_books" disabled value="<%= shelves.total_books%>">
+        <br>
+        <input type="submit" value="create">
+    </form>
+    <a href="/">Back to List</a>
+</body>
+
+</html>

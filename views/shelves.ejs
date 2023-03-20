@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelves</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>SHELVES</h1>
+    <table>
+        <tr>
+            <th>shelf_id</th>
+            <th>category</th>
+            <th>total_books</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <% for(let i=0; i < shelves.length; i++) { %>
+            <tr>
+                <td>
+                    <%= shelves[i].shelf_id %>
+                </td>
+                <td>
+                    <%= shelves[i].category %>
+                </td>
+                <td>
+                    <%= shelves[i].total_books %>
+                </td>
+                <td>
+                    <a href="/put/<%= shelves[i].shelf_id %>">Edit</a>
+                </td>
+                <td>
+                    <a href="/delete/<%= shelves[i].shelf_id %>">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <a href="/shelves_post">Add Shelves</a>
+</body>
+
+</html>
