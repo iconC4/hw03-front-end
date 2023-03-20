@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Edit Book</h1>
+    <form method="post" action="/books_put/<%=books.id%>">
+        <label for="id">id:</label>
+        <input type="text" id="id" name="id" disabled value="<%= books.id%>">
+        <br>
+        <label for="title">title:</label>
+        <input type="text" id="title" name="title" value="<%= books.title%>">
+        <br>
+        <label for="author">author</label>
+        <input type="text" id="author" name="author" value="<%= books.author%>">
+        <br>
+        <label for="shelf_id">shelf_id</label>
+        <input type="text" id="shelf_id" name="shelf_id" value="<%= books.shelf_id%>">
+        <br>
+        <input type="submit" value="create">
+    </form>
+    <a href="/">Back to List</a>
+</body>
+
+</html>

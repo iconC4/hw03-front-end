@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Shelves</title>
+    <title>Create Books</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
     <h1>Create Shelves</h1>
-    <form method="post" action="/shelve_post">
-        <label for="category">category:</label>
-        <input type="text" id="category" name="category">
+    <form method="post" action="/book_post">
+        <label for="title">title:</label>
+        <input type="text" id="title" name="title">
         <br>
-        <label for="total_books">total_books</label>
-        <input type="text" id="total_books" name="total_books">
+        <label for="author">author</label>
+        <input type="text" id="author" name="author">
+        <br>
+        <label for="shelf_id">shelf_id</label>
+        <input type="text" id="shelf_id" name="shelf_id">
         <br>
         <input type="submit" value="create">
     </form>

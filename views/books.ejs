@@ -5,43 +5,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shelves</title>
+    <title>Books</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <h1>SHELVES</h1>
+    <h1>BOOKS</h1>
     <table>
         <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>author</th>
             <th>shelf_id</th>
-            <th>category</th>
-            <th>total_books</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
-        <% for(let i=0; i < shelves.length; i++) { %>
+        <% for(let i=0; i < books.length; i++) { %>
             <tr>
                 <td>
-                    <%= shelves[i].shelf_id %>
+                    <%= books[i].id %>
                 </td>
                 <td>
-                    <%= shelves[i].category %>
+                    <%= books[i].title %>
                 </td>
                 <td>
-                    <%= shelves[i].total_books %>
+                    <%= books[i].author %>
                 </td>
                 <td>
-                    <a href="/put/<%= shelves[i].shelf_id %>">Edit</a>
+                    <%= books[i].shelf_id %>
                 </td>
                 <td>
-                    <a href="/delete/<%= shelves[i].shelf_id %>">Delete</a>
+                    <a href="/books_put/<%= books[i].books_id %>">Edit</a>
+                </td>
+                <td>
+                    <a href="/delete/<%= books[i].books_id %>">Delete</a>
                 </td>
             </tr>
         <% } %>
     </table>
     <a href="/">SHELVES</a>
     <a href="/books">BOOKS</a>
-    <a href="/shelves_post">Add Shelves</a>
+    <a href="/books_post">Add Books</a>
 </body>
 
 </html>
