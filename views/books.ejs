@@ -10,42 +10,48 @@
 </head>
 
 <body>
-    <h1>BOOKS</h1>
-    <table>
-        <tr>
-            <th>id</th>
-            <th>title</th>
-            <th>author</th>
-            <th>shelf_id</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        <% for(let i=0; i < books.length; i++) { %>
-            <tr>
-                <td>
-                    <%= books[i].id %>
-                </td>
-                <td>
-                    <%= books[i].title %>
-                </td>
-                <td>
-                    <%= books[i].author %>
-                </td>
-                <td>
-                    <%= books[i].shelf_id %>
-                </td>
-                <td>
-                    <a href="/books_put/<%= books[i].books_id %>">Edit</a>
-                </td>
-                <td>
-                    <a href="/delete/<%= books[i].books_id %>">Delete</a>
-                </td>
-            </tr>
-        <% } %>
-    </table>
-    <a href="/">SHELVES</a>
-    <a href="/books">BOOKS</a>
-    <a href="/books_post">Add Books</a>
+    <div class="container">
+        <div class="sidebar">
+            <a href="/">SHELVES</a>
+            <a href="/books">BOOKS</a>
+        </div>
+        <div class="content">
+            <h1>BOOKS</h1>
+            <a href="/books_post">Add Books</a>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>author</th>
+                    <th>shelf_id</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <% for(let i=0; i < books.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= books[i].id %>
+                        </td>
+                        <td>
+                            <%= books[i].title %>
+                        </td>
+                        <td>
+                            <%= books[i].author %>
+                        </td>
+                        <td>
+                            <%= books[i].shelf_id %>
+                        </td>
+                        <td>
+                            <a href="/books_put/<%= books[i].id %>">Edit</a>
+                        </td>
+                        <td>
+                            <a href="/books/<%= books[i].id %>">Delete</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+    </div>
 </body>
 
 </html>

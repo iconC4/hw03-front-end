@@ -48,11 +48,6 @@ app.get('/delete/:id', async (req, res) => {
     }
 });
 
-// app.get('/delete/:id', async (req, res) => {
-//     await axios.delete(base_url + "/shelves/" + req.params.id);
-//     res.redirect('/');
-// });
-
 ///////////////////////////////////////////////////////////////
 /// BOOKS
 app.get('/books', async (req, res) => {
@@ -77,6 +72,16 @@ app.get('/books_put/:id', async (req, res) => {
 app.post('/books_put/:id', async (req, res) => {
     const books = await axios.put(base_url + "/books/" + req.params.id, req.body);
     res.redirect('/');
+});
+
+app.get('/delete/:id', async (req, res) => {
+    try {
+        await axios.delete(base_url + "/books/" + req.params.id);
+        res.redirect('/');
+    } catch (err) {
+        res.status(200).send(err.message);
+        console.log(err.message);
+    }
 });
 
 app.listen(5500, () => console.log("localhost: 5500"));

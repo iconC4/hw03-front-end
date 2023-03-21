@@ -10,38 +10,44 @@
 </head>
 
 <body>
-    <h1>SHELVES</h1>
-    <table>
-        <tr>
-            <th>shelf_id</th>
-            <th>category</th>
-            <th>total_books</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        <% for(let i=0; i < shelves.length; i++) { %>
-            <tr>
-                <td>
-                    <%= shelves[i].shelf_id %>
-                </td>
-                <td>
-                    <%= shelves[i].category %>
-                </td>
-                <td>
-                    <%= shelves[i].total_books %>
-                </td>
-                <td>
-                    <a href="/put/<%= shelves[i].shelf_id %>">Edit</a>
-                </td>
-                <td>
-                    <a href="/delete/<%= shelves[i].shelf_id %>">Delete</a>
-                </td>
-            </tr>
-        <% } %>
-    </table>
-    <a href="/">SHELVES</a>
-    <a href="/books">BOOKS</a>
-    <a href="/shelves_post">Add Shelves</a>
+    <div class="container">
+        <div class="sidebar">
+            <a href="/">SHELVES</a>
+            <a href="/books">BOOKS</a>
+        </div>
+        <div class="content">
+            <h1>SHELVES</h1>
+            <a href="/shelves_post">Add Shelves</a>
+            <table>
+                <tr>
+                    <th>shelf_id</th>
+                    <th>category</th>
+                    <th>total_books</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <% for(let i=0; i < shelves.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= shelves[i].shelf_id %>
+                        </td>
+                        <td>
+                            <%= shelves[i].category %>
+                        </td>
+                        <td>
+                            <%= shelves[i].total_books %>
+                        </td>
+                        <td>
+                            <a href="/put/<%= shelves[i].shelf_id %>">Edit</a>
+                        </td>
+                        <td>
+                            <a href="/delete/<%= shelves[i].shelf_id %>">Delete</a>
+                        </td>
+                    </tr>
+                    <% } %>
+            </table>
+        </div>
+    </div>
 </body>
 
 </html>
